@@ -28,7 +28,7 @@ public class Bai07 {
             sum += array[i][count];
             count++;
         }
-        System.out.println(" Tổng đường chéo là: "+sum);
+        System.out.printf("sum %d ",sum);
 
     }
 }

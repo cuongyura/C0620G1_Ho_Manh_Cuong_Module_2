@@ -12,6 +12,7 @@ public class MineSweeper {
         for (int xOrdinate = 0; xOrdinate < map[0].length; xOrdinate++) {
             String curentCell = map[0][xOrdinate];
             if (curentCell.equals("*")) {
+
                 mapReport[0][xOrdinate] = "*";
             } else {
                 final int[][] NEIGHBOURS_ORDINATE = {
