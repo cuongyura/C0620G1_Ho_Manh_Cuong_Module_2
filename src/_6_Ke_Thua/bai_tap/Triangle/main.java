@@ -13,7 +13,7 @@ public class main {
         double c = sc.nextDouble();
         Triangle triangle = new Triangle(a,b,c);
         if((a + b) > c && (a + c) > b && (b + c > a) && ( a > 0) && b > 0 && c > 0){
-            System.out.println("{ "+a+", "+b+", "+c+", "+" }"+"\n -> Là ba cạnh của tam giác");
+            System.out.println(triangle.toString()+"\n -> Là ba cạnh của tam giác");
             if((a==b) && (b==c) && (c==a)){
                 System.out.println(" Đây là tam giac đều: ");
                 System.out.println("Chu vi là: "+"\n"+triangle.getPerimeterEquilateralTriangle());

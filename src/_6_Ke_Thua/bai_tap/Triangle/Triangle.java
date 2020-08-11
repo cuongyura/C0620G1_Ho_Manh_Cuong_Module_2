@@ -90,8 +90,8 @@ public class Triangle {
 
     @Override
     public String toString() {
-        return  " , side1=" + side1 +
-                " , side2=" + side2 +
-                " , side3=" + side3;
+        return  "   side1 = " + side1 +
+                " , side2 = " + side2 +
+                " , side3 = " + side3;
     }
 }
