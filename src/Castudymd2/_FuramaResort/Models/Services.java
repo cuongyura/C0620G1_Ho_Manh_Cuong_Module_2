@@ -1,85 +1,75 @@
 package Castudymd2._FuramaResort.Models;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
-public abstract class Services {
-    Scanner sc = new Scanner(System.in);
-    // properties:
+public abstract class Services implements Serializable,Comparable<Services> {
+    protected String id;
+    protected String ServiceType;
+    protected double usageArea;
+    protected double rentCost;
+    protected int guestAmount;
+    protected String rentType;
+    public abstract String showInfo();
 
-       private String id;
-       private String nameService;
-       private double areaUse;
-       private double costOfUse;
-       private int maximumNumber;
-       private String rentalType;
-
-     // constructor:
-
-        public Services() {
-
-        }
-
-        public Services(String id, String nameService, double areaUse, double costOfUse, int maximumNumber, String rentalType) {
+    public Services(String id, String serviceType, double usageArea, double rentCost, int guestAmount, String rentType) {
         this.id = id;
-        this.nameService = nameService;
-        this.areaUse = areaUse;
-        this.costOfUse = costOfUse;
-        this.maximumNumber = maximumNumber;
-        this.rentalType = rentalType;
-        }
+        ServiceType = serviceType;
+        this.usageArea = usageArea;
+        this.rentCost = rentCost;
+        this.guestAmount = guestAmount;
+        this.rentType = rentType;
+    }
 
-        // geter and setter:
+    public Services() {
+    }
 
+    public String getId() {
+        return id;
+    }
 
-            public String getId() {
-                return id;
-             }
+    public void setId(String id) {
+        this.id = id;
+    }
 
-            public void setId(String id) {
-                this.id = id;
-             }
+    public String getServiceType() {
+        return ServiceType;
+    }
 
-            public String getNameService() {
-                return nameService;
-             }
+    public void setServiceType(String serviceType) {
+        ServiceType = serviceType;
+    }
 
-             public void setNameService(String nameService) {
-                this.nameService = nameService;
-            }
+    public double getUsageArea() {
+        return usageArea;
+    }
 
-             public double getAreaUse() {
-                return areaUse;
-             }
+    public void setUsageArea(double usageArea) {
+        this.usageArea = usageArea;
+    }
 
-             public void setAreaUse(double areaUse) {
-                this.areaUse = areaUse;
-             }
+    public double getRentCost() {
+        return rentCost;
+    }
 
-             public double getCostOfUse() {
-                return costOfUse;
-             }
+    public void setRentCost(double rentCost) {
+        this.rentCost = rentCost;
+    }
 
-            public void setCostOfUse(double costOfUse) {
-                this.costOfUse = costOfUse;
-            }
+    public int getGuestAmount() {
+        return guestAmount;
+    }
 
-            public int getMaximumNumber() {
-                return maximumNumber;
-            }
+    public void setGuestAmount(int guestAmount) {
+        this.guestAmount = guestAmount;
+    }
 
-            public void setMaximumNumber(int maximumNumber) {
-                this.maximumNumber = maximumNumber;
-            }
+    public String getRentType() {
+        return rentType;
+    }
 
-            public String getRentalType() {
-                return rentalType;
-            }
-
-            public void setRentalType(String rentalType) {
-                this.rentalType = rentalType;
-            }
-
-            public abstract String showInFor();
-
-
+    public void setRentType(String rentType) {
+        this.rentType = rentType;
+    }
 }
+

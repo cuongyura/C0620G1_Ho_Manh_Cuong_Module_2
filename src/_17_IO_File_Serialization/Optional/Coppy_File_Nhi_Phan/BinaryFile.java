@@ -8,7 +8,7 @@ public class BinaryFile {
         student.setMaSo("375114G");
         student.setHoTen("Ra Phát Cỏ");
         student.setAge(17);
-        student.getDiaChi("Đà Nẵng");
+        student.getDiaChi();
 
         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(new File("student1.dat")));
         oos.writeObject(student);*/

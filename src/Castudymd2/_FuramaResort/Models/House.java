@@ -1,72 +1,43 @@
 package Castudymd2._FuramaResort.Models;
 
+import java.util.ArrayList;
+
 public class House extends Services {
-     // properties:
+    public static ArrayList<House> arrHouse = new ArrayList<>();
 
-        private String standardRoom;
-        private String descriptionConvenient;
-        private int numberFlool;
-
-     // constructor:
-
+    private String roomStandard;
+    private String otherExclusives;
+    private int floors;
 
     public House() {
-
     }
 
-    public House(String standardRoom, String descriptionConvenient, int numberFlool) {
-        this.standardRoom = standardRoom;
-        this.descriptionConvenient = descriptionConvenient;
-        this.numberFlool = numberFlool;
+    public House(String id, String serviceType, double usageArea, double rentCost, int guestAmount, String rentType) {
+        super(id, serviceType, usageArea, rentCost, guestAmount, rentType);
     }
 
-    public House(String id, String nameService, double areaUse, double costOfUse, int maximumNumber, String rentalType, String standardRoom, String descriptionConvenient, int numberFlool) {
-        super(id, nameService, areaUse, costOfUse, maximumNumber, rentalType);
-        this.standardRoom = standardRoom;
-        this.descriptionConvenient = descriptionConvenient;
-        this.numberFlool = numberFlool;
-    }
-
-    // get,set:
-
-
-    public String getStandardRoom() {
-        return standardRoom;
-    }
-
-    public void setStandardRoom(String standardRoom) {
-        this.standardRoom = standardRoom;
-    }
-
-    public String getDescriptionConvenient() {
-        return descriptionConvenient;
-    }
-
-    public void setDescriptionConvenient(String descriptionConvenient) {
-        this.descriptionConvenient = descriptionConvenient;
-    }
-
-    public int getNumberFlool() {
-        return numberFlool;
-    }
-
-    public void setNumberFlool(int numberFlool) {
-        this.numberFlool = numberFlool;
+    public House(String id, String serviceType, double usageArea, double rentCost, int guestAmount, String rentType, String roomStandard, String otherExclusives, int floors) {
+        super(id, serviceType, usageArea, rentCost, guestAmount, rentType);
+        this.roomStandard = roomStandard;
+        this.otherExclusives = otherExclusives;
+        this.floors = floors;
     }
 
     @Override
-    public String showInFor() {
-               return
-                "-> id is: " + getId()
-                +"-> nameService is:  " + getNameService()
-                +"-> costOfUse is:  " + getCostOfUse()
-                +"-> maximumNumber is: " + getMaximumNumber()
-                +"-> rentalType is: " + getRentalType()
-                +"->standardRoom is: " + standardRoom
-                +"->description Convenient is: " + descriptionConvenient
-                +"->numberFlool is: " + numberFlool;
+    public String showInfo() {
+        return "roomStandard='" + roomStandard + '\'' +
+                ", otherExclusives='" + otherExclusives + '\'' +
+                ", floors=" + floors +
+                ", id='" + id + '\'' +
+                ", ServiceType='" + ServiceType + '\'' +
+                ", usageArea=" + usageArea +
+                ", rentCost=" + rentCost +
+                ", guestAmount=" + guestAmount +
+                ", rentType='" + rentType + '\'';
     }
 
-
-
+    @Override
+    public int compareTo(Services o) {
+        return this.getId().compareTo(o.getId());
+    }
 }

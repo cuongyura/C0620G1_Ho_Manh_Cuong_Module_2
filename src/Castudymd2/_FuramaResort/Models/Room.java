@@ -1,46 +1,33 @@
 package Castudymd2._FuramaResort.Models;
 
-public class Room extends Services {
-    // properties:
+import java.util.ArrayList;
 
-    private String servicesFree;
-    // constructor:
+public class Room extends Services {
+    public static ArrayList<Room> arrRoom = new ArrayList<>();
+
+    private String freeService;
 
     public Room() {
-
     }
 
-    public Room(String servicesFree) {
-        this.servicesFree = servicesFree;
-    }
-
-    public Room(String id, String nameService, double areaUse, double costOfUse, int maximumNumber, String rentalType, String servicesFree) {
-        super(id, nameService, areaUse, costOfUse, maximumNumber, rentalType);
-        this.servicesFree = servicesFree;
-    }
-
-    // get,set:
-
-
-    public String getServicesFree() {
-        return servicesFree;
-    }
-
-    public void setServicesFree(String servicesFree) {
-        this.servicesFree = servicesFree;
+    public Room(String id, String serviceType, double usageArea, double rentCost, int guestAmount, String rentType, String freeService) {
+        super(id, serviceType, usageArea, rentCost, guestAmount, rentType);
+        this.freeService = freeService;
     }
 
     @Override
-    public String showInFor() {
-        return
-                "-> id is: " + getId()
-                +"-> nameService is:  " + getNameService()
-                +"-> costOfUse is:  " + getCostOfUse()
-                +"-> maximumNumber is: " + getMaximumNumber()
-                +"-> rentalType is: " + getRentalType()
-                +"servicesFree is: " + servicesFree;
-
+    public String showInfo() {
+        return "freeService='" + freeService + '\'' +
+                ", id='" + id + '\'' +
+                ", ServiceType='" + ServiceType + '\'' +
+                ", usageArea=" + usageArea +
+                ", rentCost=" + rentCost +
+                ", guestAmount=" + guestAmount +
+                ", rentType='" + rentType + '\'';
     }
 
-
+    @Override
+    public int compareTo(Services o) {
+        return this.getId().compareTo(o.getId());
+    }
 }
